@@ -80,9 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: ThemeProvider.themeOf(context).data.colorScheme.background,
       body: Column(
           children: [
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20,),
             Text(
               appName,
               style: TextStyle(
@@ -103,6 +101,31 @@ class _HomeScreenState extends State<HomeScreen> {
             _buildSubmitButton(context),
             SizedBox(height: 20,),
             _buildSwitch(context),
+            SizedBox(height: 20,),
+            GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, '/image');
+              },
+              child: Container(
+                height: 60,
+                width: double.maxFinite,
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Center(
+                  child: Text("UPLOAD IMAGE",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'SF Compact',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20
+                  ),
+                  ),
+                ),
+              ),
+            ),
           ],
       ),
     ));
@@ -140,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return GestureDetector(
             onTap: () {
               bool isValid = true;
-              // Check if any of the fields are empty
+              // Checks if any of the fields are empty
               if (_selectedCountry==null || _selectedCountry == '') {
                 isValid = false;
                 ScaffoldMessenger.of(context).showSnackBar(

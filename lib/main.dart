@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:theme_project/image_screen.dart';
 import 'package:theme_project/providers/background_color_provider.dart';
 import 'package:theme_project/home_screen.dart';
 import 'package:theme_project/providers/locale_provider.dart';
@@ -9,9 +10,12 @@ import 'package:theme_provider/theme_provider.dart';
 import 'package:firebase_core/firebase_core.dart'; // Import Firebase Core
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Ensure Flutter is initialized
   await Firebase.initializeApp(
+    name: 'theme-app',
     options:  FirebaseOptions(
     apiKey: "AIzaSyDj1CmlORJAhqRXBuQJ2imEuIWzeMH_CQI",
     appId: "1:457152791382:web:cf71b307ec5c0eda52ccf7",
@@ -85,7 +89,12 @@ class _MyAppState extends State<MyApp> {
                       Locale('hi', ''),
                       Locale('ur', ''),
                     ],
+                    initialRoute: '/image',
                     debugShowCheckedModeBanner: false,
+                    routes: {
+                      '/home': (context) => const HomeScreen(),
+                      '/image': (context) => const ImageScreen(),
+                    },
                     theme: ThemeProvider.themeOf(themeContext).data,
                     home: HomeScreen(),
                   ),
