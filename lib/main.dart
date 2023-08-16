@@ -96,7 +96,6 @@ class _MyAppState extends State<MyApp> {
                       '/image': (context) => const ImageScreen(),
                     },
                     theme: ThemeProvider.themeOf(themeContext).data,
-                    home: HomeScreen(),
                   ),
                 ),
               ),
