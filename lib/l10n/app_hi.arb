@@ -1,0 +1,9 @@
+{
+  "@@locale": "hi",
+  "country": "APPINDIA",
+  "name_placeholder": "नाम दर्ज करें",
+  "age_placeholder": "आयु दर्ज करें",
+  "submit": "सबमिट करें",
+  "dark_mode": "डार्क मोड",
+  "light_mode": "लाइट मोड"
+}

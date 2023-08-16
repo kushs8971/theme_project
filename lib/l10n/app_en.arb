@@ -1,0 +1,9 @@
+{
+  "@@locale": "en",
+  "country": "APPSA",
+  "name_placeholder": "Enter Name",
+  "age_placeholder": "Enter Age",
+  "submit": "Submit",
+  "dark_mode": "Dark Mode",
+  "light_mode": "Light Mode"
+}
