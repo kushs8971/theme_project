@@ -89,7 +89,7 @@ class _MyAppState extends State<MyApp> {
                       Locale('hi', ''),
                       Locale('ur', ''),
                     ],
-                    initialRoute: '/image',
+                    initialRoute: '/home',
                     debugShowCheckedModeBanner: false,
                     routes: {
                       '/home': (context) => const HomeScreen(),
