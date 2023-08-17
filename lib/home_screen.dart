@@ -161,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   GestureDetector _buildSubmitButton(BuildContext context) {
     return GestureDetector(
-            onTap: () {
+            onTap: () async {
               bool isValid = true;
               // Checks if any of the fields are empty
               if (_selectedCountry==null || _selectedCountry == '') {
@@ -192,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 return;
               }
               if (isValid) {
-                _storeDataInFirestore();
+                await _storeDataInFirestore();
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Details Uploaded Successfully.'),

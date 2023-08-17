@@ -273,8 +273,8 @@ class _ImageScreenState extends State<ImageScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             GestureDetector(
-                              onTap: () {
-                                _openCamera();
+                              onTap: () async {
+                                await _openCamera();
                                 Navigator.pop(context);
                               },
                               child: Container(
@@ -298,8 +298,8 @@ class _ImageScreenState extends State<ImageScreen> {
                               ),
                             ),
                             GestureDetector(
-                              onTap: () {
-                                pickImage();
+                              onTap: () async {
+                                await pickImage();
                                 Navigator.pop(context);
                               },
                               child: Container(
